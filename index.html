@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Question</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-800px) scale(0.8); opacity: 0; }
+    }
+    .heart {
+      position: absolute;
+      bottom: 0;
+      color: pink;
+      font-size: 24px;
+      animation: float 6s linear infinite;
+    }
+    #no { position: relative; }
+    .glow {
+      text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff66b2, 0 0 30px #ff80bf;
+    }
+  </style>
+</head>
+<body class="h-screen w-screen flex items-center justify-center bg-gradient-to-br from-pink-300 via-pink-100 to-white overflow-hidden relative">
+
+  <div id="hearts"></div>
+
+  <div id="container" class="flex flex-col items-center text-center p-6">
+    <h1 class="text-5xl md:text-7xl font-bold text-pink-600 drop-shadow-lg glow animate-bounce mb-8">
+      Do you love me? 💖
+    </h1>
+    
+    <div id="buttons" class="flex gap-6 mt-6">
+      <a href="yes.html">
+        <button id="yes" class="px-8 py-4 text-2xl bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-2xl shadow-lg hover:scale-110 transition transform">
+          Yes 😍
+        </button>
+      </a>
+      <button id="no" class="px-8 py-4 text-2xl bg-gray-800 text-white rounded-2xl shadow-lg">
+        No 😅
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.innerHTML = "💖";
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.getElementById("hearts").appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 400);
+
+    // "No" button escape
+    const noBtn = document.getElementById("no");
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 200);
+      const y = Math.random() * (window.innerHeight - 200);
+      noBtn.style.position = "absolute";
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>

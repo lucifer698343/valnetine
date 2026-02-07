@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This Could Be Us 💞</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 2s ease forwards;
+    }
+  </style>
+</head>
+
+<body
+  class="min-h-screen w-screen flex flex-col items-center justify-start bg-gradient-to-br from-pink-300 via-pink-200 to-white relative text-white py-10"
+>
+
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/25"></div>
+
+  <!-- Music continues -->
+  <audio autoplay loop>
+    <source src="Stephen Sanchez - Until I Found You _ Piano Cover by Pianella Piano.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Heading -->
+  <h1 class="relative text-4xl md:text-6xl font-bold mb-10 fade-in text-center">
+    This Could Be Us 💞
+  </h1>
+
+  <!-- Pictures Grid -->
+  <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl px-6 fade-in">
+    <div class="rounded-2xl overflow-hidden shadow-2xl">
+      <img src="cat 1.jpg" alt="Cat 1" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-2xl overflow-hidden shadow-2xl">
+      <img src="cat 2.jpg" alt="Cat 2" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-2xl overflow-hidden shadow-2xl">
+      <img src="cat 3.jpg" alt="Cat 3" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-2xl overflow-hidden shadow-2xl">
+      <img src="cat 4.jpg" alt="Cat 4" class="w-full h-full object-cover">
+    </div>
+  </div>
+
+</body>
+</html>
